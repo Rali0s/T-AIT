@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Alignment, Button, Card, Elevation, Collapse, Popover } from '@blueprintjs/core';
+import Console from 'react-console-emulator';
 
 export default function Dashboard() {
   const [showControls, setShowControls] = React.useState(false);
@@ -8,6 +9,13 @@ export default function Dashboard() {
   const sigils = ['Sigil A', 'Sigil B', 'Sigil C'];
   const locations = ['Base', 'Field', 'HQ'];
   const buttonStyle: React.CSSProperties = { boxShadow: '0 0 5px #137CBD' };
+  const commands = {
+    echo: {
+      description: 'Echoes input',
+      usage: 'echo <text>',
+      fn: (...args: string[]) => args.join(' '),
+    },
+  };
 
   return (
     <>
@@ -75,14 +83,19 @@ export default function Dashboard() {
           <div
             style={{
               backgroundColor: '#000',
-              color: '#8be9fd',
+              color: '#5c9ded',
               padding: '1rem',
               fontFamily: "'Iceland', monospace",
               minHeight: '200px',
               boxShadow: 'inset 0 0 10px #000',
             }}
           >
-            <pre style={{ margin: 0 }}>$ echo "Welcome to Layer-4 ReverbNet"</pre>
+            <Console
+              commands={commands}
+              welcomeMessage="Welcome to Layer-4 ReverbNet"
+              promptLabel="reverb$"
+              style={{ backgroundColor: 'transparent', color: '#5c9ded' }}
+            />
           </div>
         </div>
         <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>

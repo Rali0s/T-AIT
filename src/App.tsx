@@ -45,9 +45,29 @@ export default function TerminalApp() {
         >
           Layer-4 ReverbNet
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontFamily: "'Quantico', sans-serif" }}>
-          <Button minimal alignText="left" text="Dashboard" onClick={() => setPage('dashboard')} />
-          <Button minimal alignText="left" text="About" onClick={() => setPage('about')} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            fontFamily: "'Quantico', sans-serif",
+            color: darkMode ? '#f8f8f2' : '#394B59',
+          }}
+        >
+          <Button
+            minimal
+            alignText="left"
+            text="Dashboard"
+            onClick={() => setPage('dashboard')}
+            style={{ color: darkMode ? '#f8f8f2' : '#394B59' }}
+          />
+          <Button
+            minimal
+            alignText="left"
+            text="About"
+            onClick={() => setPage('about')}
+            style={{ color: darkMode ? '#f8f8f2' : '#394B59' }}
+          />
         </div>
         <div style={{ marginTop: 'auto', alignSelf: 'flex-start' }}>
           <Switch label="Dark Mode" checked={darkMode} onChange={toggleTheme} />
