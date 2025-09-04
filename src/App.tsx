@@ -9,6 +9,7 @@ import {
   Switch,
   Tab,
   Tabs,
+  TabId,
 } from '@blueprintjs/core';
 
 interface AIResponse {
@@ -68,8 +69,8 @@ export default function App() {
             id="main-nav"
             vertical
             selectedTabId={tabId}
-            onChange={(id) => setTabId(id as string)}
-            renderActiveTabPanel={false}
+            onChange={(newId: TabId) => setTabId(newId.toString())}
+            renderActiveTabPanelOnly
           >
             <Tab id="dashboard" title="Dashboard" />
             <Tab id="log" title="Log" />
