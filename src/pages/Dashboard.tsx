@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Alignment, Button, Card, Elevation, Collapse, Popover } from '@blueprintjs/core';
-import Console from 'react-console-emulator';
 
 export default function Dashboard() {
   const [showControls, setShowControls] = React.useState(false);
@@ -9,13 +8,51 @@ export default function Dashboard() {
   const sigils = ['Sigil A', 'Sigil B', 'Sigil C'];
   const locations = ['Base', 'Field', 'HQ'];
   const buttonStyle: React.CSSProperties = { boxShadow: '0 0 5px #137CBD' };
-  const commands = {
-    echo: {
-      description: 'Echoes input',
-      usage: 'echo <text>',
-      fn: (...args: string[]) => args.join(' '),
-    },
-  };
+
+  function Terminal() {
+    const [lines, setLines] = React.useState<string[]>([
+      'Welcome to Layer-4 ReverbNet',
+    ]);
+    const [input, setInput] = React.useState('');
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        setLines([...lines, `reverb$ ${input}`]);
+        setInput('');
+      }
+    };
+
+    return (
+      <div
+        style={{
+          backgroundColor: '#000',
+          color: '#5c9ded',
+          padding: '1rem',
+          fontFamily: "'Iceland', monospace",
+          minHeight: '200px',
+          boxShadow: 'inset 0 0 10px #000',
+        }}
+      >
+        {lines.map((line, i) => (
+          <div key={i}>{line}</div>
+        ))}
+        <div>
+          <span>reverb$ </span>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              outline: 'none',
+              color: '#5c9ded',
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -80,23 +117,7 @@ export default function Dashboard() {
             <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#ffbd2e' }} />
             <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#27c93f' }} />
           </div>
-          <div
-            style={{
-              backgroundColor: '#000',
-              color: '#5c9ded',
-              padding: '1rem',
-              fontFamily: "'Iceland', monospace",
-              minHeight: '200px',
-              boxShadow: 'inset 0 0 10px #000',
-            }}
-          >
-            <Console
-              commands={commands}
-              welcomeMessage="Welcome to Layer-4 ReverbNet"
-              promptLabel="reverb$"
-              style={{ backgroundColor: 'transparent', color: '#5c9ded' }}
-            />
-          </div>
+          <Terminal />
         </div>
         <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
           <Button text="SITREP" />
