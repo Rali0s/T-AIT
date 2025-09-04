@@ -16,38 +16,40 @@ export default function TerminalApp() {
       style={{
         display: 'flex',
         height: '100vh',
-        fontFamily: "'Stolzl', sans-serif",
-        backgroundColor: darkMode ? '#137CBD' : '#F5F8FA',
+        fontFamily: "'Oxanium', sans-serif",
+        backgroundColor: darkMode ? '#0a0f1a' : '#F5F8FA',
       }}
     >
       <Navbar
         style={{
           width: '240px',
           minHeight: '100vh',
-          opacity: 0.9,
           display: 'flex',
           flexDirection: 'column',
           padding: '1rem',
-          backgroundColor: darkMode ? '#137CBD' : undefined,
+          backgroundColor: darkMode ? '#112240' : '#EBF1F5',
+          borderRight: darkMode ? '1px solid #137CBD' : '1px solid #CED9E0',
         }}
       >
         <div
           style={{
-            padding: '1rem 0 2rem',
+            padding: '2rem 0 1.5rem',
             textAlign: 'center',
-            fontSize: '1.5rem',
+            fontSize: '2rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
             fontFamily: "'Baumans', cursive",
+            borderBottom: darkMode ? '1px solid #137CBD' : '1px solid #CED9E0',
+            marginBottom: '1rem',
           }}
         >
           Layer-4 ReverbNet
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontFamily: "'Quantico', sans-serif" }}>
           <Button minimal alignText="left" text="Dashboard" onClick={() => setPage('dashboard')} />
           <Button minimal alignText="left" text="About" onClick={() => setPage('about')} />
         </div>
-        <div style={{ marginTop: 'auto' }}>
+        <div style={{ marginTop: 'auto', alignSelf: 'flex-start' }}>
           <Switch label="Dark Mode" checked={darkMode} onChange={toggleTheme} />
         </div>
       </Navbar>
@@ -57,7 +59,7 @@ export default function TerminalApp() {
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: darkMode ? '#137CBD' : '#F5F8FA',
+          backgroundColor: darkMode ? '#0a0f1a' : '#F5F8FA',
         }}
       >
         <main style={{ flexGrow: 1, padding: '2rem', overflowY: 'auto' }}>

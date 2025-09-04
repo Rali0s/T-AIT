@@ -3,26 +3,28 @@ import { Card } from '@blueprintjs/core';
 
 export default function About() {
   return (
-    <Card style={{ maxWidth: '800px', margin: '2rem auto', lineHeight: 1.6 }}>
-      <h2>About Layer-4 ReverbNet</h2>
+    <Card style={{ maxWidth: '800px', margin: '2rem auto', lineHeight: 1.6, fontFamily: "'Quantico', sans-serif" }}>
+      <h2 style={{ fontFamily: "'Baumans', cursive" }}>About Reverb-Net</h2>
       <p>
-        Layer-4 ReverbNet is a stealthy, minimalist dashboard experiment styled after
-        classic Linux terminals. It showcases a mock AI interface and serves as a
-        foundation for future integrations.
+        Reverb-Net is more than a platform—it’s a living, breathing narrative engine co-authored by you.
+        Conceived in the heart of the cypherpunk ethos, Reverb-Net weaves together cryptic architecture and
+        fictional storytelling in real time. Every interaction shapes the unfolding world, and every user is
+        both reader and creator.
       </p>
+      <h3>Living Architecture</h3>
       <p>
-        Use the dashboard to explore epoch selections, memory sigils and track your
-        status within the story. The interface is intentionally simple—designed to
-        keep focus on mission data without distraction.
+        Explore a modular, networked environment where nodes of code and narrative echo and ripple, forming
+        cryptic tunnels and poetic structures shaped by your input.
       </p>
+      <h3>Collaborative Authorship</h3>
       <p>
-        The project embraces the KISS principle while maintaining a covert aesthetic.
-        Under the hood it leverages BlueprintJS for fast prototyping and a terminal
-        inspired colour palette to keep operators in the flow.
+        Reverb-Net is the author—yet it's designed to respond, evolve, and adapt as you weave your tale.
+        Together, you don’t just write stories—you co-create them.
       </p>
+      <h3>Emergent Storyworlds</h3>
       <p>
-        Future iterations aim to plug in real data streams, unlock deeper lore via
-        sigil memories and expand the Echo-Market for mission-critical resources.
+        Cyborgs, underground crypt-LANs, neon hackers, and ghost-AI whisperers—Reverb-Net is a realm where your
+        imagination activates architecture and the architecture responds with stories.
       </p>
     </Card>
   );
