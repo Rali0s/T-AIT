@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders logo text', () => {
   render(<App />);
-  const linkElement = screen.getByText(/LAYER-4 TERMINAL/i);
+  const linkElement = screen.getByText(/Layer-4 ReverbNet/i);
   expect(linkElement).toBeInTheDocument();
 });

@@ -13,7 +13,12 @@ export default function TerminalApp() {
   return (
     <div
       className={darkMode ? 'bp5-dark' : ''}
-      style={{ display: 'flex', height: '100vh', fontFamily: "'Stolzl', sans-serif" }}
+      style={{
+        display: 'flex',
+        height: '100vh',
+        fontFamily: "'Stolzl', sans-serif",
+        backgroundColor: darkMode ? '#137CBD' : '#F5F8FA',
+      }}
     >
       <Navbar
         style={{
@@ -23,6 +28,7 @@ export default function TerminalApp() {
           display: 'flex',
           flexDirection: 'column',
           padding: '1rem',
+          backgroundColor: darkMode ? '#137CBD' : undefined,
         }}
       >
         <div
@@ -32,9 +38,10 @@ export default function TerminalApp() {
             fontSize: '1.5rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
+            fontFamily: "'Baumans', cursive",
           }}
         >
-          LAYER-4 TERMINAL
+          Layer-4 ReverbNet
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <Button minimal alignText="left" text="Dashboard" onClick={() => setPage('dashboard')} />
@@ -50,7 +57,7 @@ export default function TerminalApp() {
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: darkMode ? '#10161A' : '#F5F8FA',
+          backgroundColor: darkMode ? '#137CBD' : '#F5F8FA',
         }}
       >
         <main style={{ flexGrow: 1, padding: '2rem', overflowY: 'auto' }}>
@@ -58,7 +65,7 @@ export default function TerminalApp() {
           {page === 'about' && <About />}
         </main>
         <footer style={{ textAlign: 'center', padding: '1rem', fontSize: '0.8rem' }}>
-          © 2025 Layer-4 Terminal
+          © 2025 Layer-4 ReverbNet
         </footer>
       </div>
     </div>
